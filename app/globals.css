@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+:root {
+  --background-light: #ffffff;  /* Warna background untuk light mode */
+  --foreground-light: #171717;  /* Warna teks untuk light mode */
+  --background-dark: #0a0a0a;   /* Warna background untuk dark mode */
+  --foreground-dark: #ededed;    /* Warna teks untuk dark mode */
+  
+  --purple-light: #6a0dad;      /* Warna ungu untuk light mode */
+  --pink-light: #f06292;        /* Warna pink untuk light mode */
+  
+  --purple-dark: #9b4d96;       /* Warna ungu untuk dark mode */
+  --pink-dark: #ff80ab;         /* Warna pink untuk dark mode */
+}
+
+@theme inline {
+  --color-background: var(--background-light);
+  --color-foreground: var(--foreground-light);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-background: var(--background-dark);
+    --color-foreground: var(--foreground-dark);
+  }
+}
+
+body {
+  background: var(--color-background);
+  color: var(--color-foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Mode Terang */
+.light-mode {
+  background-color: var(--background-light);
+  color: var(--foreground-light);
+}
+
+.light-mode .btn-primary {
+  background-color: var(--pink-light);
+  color: var(--purple-light);
+}
+
+.light-mode .btn-secondary {
+  background-color: var(--purple-light);
+  color: var(--pink-light);
+}
+
+/* Mode Gelap */
+.dark-mode {
+  background-color: var(--background-dark);
+  color: var(--foreground-dark);
+}
+
+.dark-mode .btn-primary {
+  background-color: var(--pink-dark);
+  color: var(--purple-dark);
+}
+
+.dark-mode .btn-secondary {
+  background-color: var(--purple-dark);
+  color: var(--pink-dark);
+}
